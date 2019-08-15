@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; 
+background-color: black;}
+* {box-sizing: border-box;}
+
+
+
+input[type=text], select, textarea, option {
+  width: 200px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; 
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; 
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+} 
+
+form {
+    display: inline-block; 
+     padding-left: 100px;
+} 
+
+img{ 
+  padding-right: 30px;
+ } 
+
+ h1{ 
+    color: #ffff66;
+  } 
+
+  h4{ 
+    color: black;
+    align-content: left; 
+    font-style: italic;
+  } 
+
+  h3{ 
+    padding-top: 50px; 
+    margin-top: 25%
+  } 
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+  padding: 5px;
+   grid-column-gap: 30px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 10px;
+   grid-column-gap: 30px;
+
+}
+
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-gap: 30px;
+
+}
+
+.item2 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-gap: 30px; 
+ 
+} 
+
+.header{ 
+  background-color: black
+ } 
+
+
+</style>
+</head>
+<body>
+
+<div class = "header">
+<h1> <center>Results</h1>  
+</div>
+
+<div class="container">  
+
+<div class="grid-container">
+
+
+<img class="item1" src="{{url_for('static', filename='images/mortgage.png')}}" align="right" width=500px>
+  
+<h3> <center>{{value}}</h3>
+
+</div>  
+</div>
+
+</body>
+</html>
