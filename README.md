@@ -10,4 +10,6 @@ View demo of app here (deployed on IBM Cloud): https://mortgage-pred-anchal-surp
  - Add api key 
  - Add ML instance ID
 
-3. Add the scoring URL of the model created on Watson Studio. This will be present in the deployments tab when you deploy the model.
+3. Add the scoring URL of the model created on Watson Studio. This will be present in the deployments tab when you deploy the model. 
+4. Run application using the following command: python server.py 
+5. Open your browser and go to https://localhost:8080
