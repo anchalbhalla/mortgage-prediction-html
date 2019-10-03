@@ -10,7 +10,7 @@ View demo of app here (deployed on IBM Cloud): https://mortgage-pred-anchal-surp
 3. Create a project
 4. Go to the project and click on add to project 
 5. Select Modeler Flow, give the flow a name and select SPSS flow
-     a. Select from file and upload the modeler.str file 
+- Select from file and upload the modeler.str file 
 6. Run the flow 
 Note: if you get an error to run the flow, delete the data files and drag and drop them and use the data files from the repo 
 7. Deploy the model when the WML model is created on Watson studio. 
