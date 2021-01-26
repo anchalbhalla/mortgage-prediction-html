@@ -6,9 +6,9 @@ app = Flask(__name__)
 PORT = 8080
 
 # wml_credentials={
-#   "password": "31dbf7ca-13bc-4b59-97ad-93db13a5c5f3",
-#   "url": "https://us-south.ml.cloud.ibm.com",
-#   "username": "59f50ecd-4ee3-4410-a687-077315fa06c3"
+#   "password": "password",
+#   "url": "URL",
+#   "username": "username"
 # }
 
 @app.route('/', methods=['GET'])
@@ -46,7 +46,7 @@ def api_call():
 
 
 
-		apikey = "7nGUIe30VuAvMitbKVTXtGOxwFT1OSzGIklmrPRsjrnv"
+		apikey = "apikey"
 
 		# Get an IAM token from IBM Cloud
 		url     = "https://iam.bluemix.net/oidc/token"
@@ -56,14 +56,14 @@ def api_call():
 		IBM_cloud_IAM_pwd = "bx"
 		response  = requests.post( url, headers=headers, data=data, auth=( IBM_cloud_IAM_uid, IBM_cloud_IAM_pwd ) )
 		iam_token = response.json()["access_token"]
-		ml_instance_id = "1f796ca3-54a1-494b-8e35-6dde99cf5888"
+		ml_instance_id = "ml_id"
 		print(iam_token)  
 
 		header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + iam_token, 'ML-Instance-ID': ml_instance_id}
 
 		payload_scoring = {"fields": ["Income", "AppliedOnline", "Residence", "YearCurrentAddress", "YearsCurrentEmployer", "NumberOfCards", "CCDebt", "Loans", "LoanAmount", "SalePrice", "Location"], "values": [[int(income), applied, residence, int(address), int(employer), int(cards), int(debt), int(loans), int(amount),int(price), int(location)]]}
 		print(payload_scoring)
-		response_scoring = requests.post('https://us-south.ml.cloud.ibm.com/v3/wml_instances/1f796ca3-54a1-494b-8e35-6dde99cf5888/deployments/594e78c6-1723-4fa2-9ee4-53ab61f7ea65/online', json=payload_scoring, headers=header)
+		response_scoring = requests.post('scoring-url', json=payload_scoring, headers=header)
 
 		jsonResult = json.loads(response_scoring.text) 
 		# print (jsonResult)
